@@ -22,12 +22,14 @@ st.sidebar.subheader("🎛️ ROI Scenario Modeler")
 st.sidebar.write("What if we scaled our AI training to more teams?")
 trained_users_multiplier = st.sidebar.slider("Increase AI Adoption Multiplier", 1.0, 5.0, 1.0, step=0.5)
 
-# 3. Create Sample Data (We use this in case the CSV isn't uploaded yet so the app doesn't crash!)
-try:
-    df = pd.read_csv("roi_data.csv")
-except FileNotFoundError:
-    # Fallback sample data matching your exact PA&I workstreams
-    data = {
+# 3. Hackathon Demo Data (Using sample data for a perfect presentation)
+data = {
+    'Project_Name': ['Qlik Cloud Training', 'Comms Generator Gem', 'ROI Tracker Form', 'Sasquatch Hub Setup', 'EV&E Feedback Loop'],
+    'Workstream': ['Readiness & Enablement', 'Readiness & Enablement', 'Technology & Design', 'Hub & Spoke', 'EV&E Integration'],
+    'Hours_Saved_Monthly': [120, 80, 45, 150, 60],
+    'Estimated_Dollar_Savings': [6000, 4000, 2250, 7500, 3000]
+}
+df = pd.DataFrame(data)
         'Project_Name': ['Qlik Cloud Training', 'Comms Generator Gem', 'ROI Tracker Form', 'Sasquatch Hub Setup', 'EV&E Feedback Loop'],
         'Workstream': ['Readiness & Enablement', 'Readiness & Enablement', 'Technology & Design', 'Hub & Spoke', 'EV&E Integration'],
         'Hours_Saved_Monthly': [120, 80, 45, 150, 60],
