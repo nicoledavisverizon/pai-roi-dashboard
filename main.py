@@ -1,4 +1,3 @@
-import streamlit as pd
 import pandas as pd
 import streamlit as st
 
@@ -30,12 +29,6 @@ data = {
     'Estimated_Dollar_Savings': [6000, 4000, 2250, 7500, 3000]
 }
 df = pd.DataFrame(data)
-        'Project_Name': ['Qlik Cloud Training', 'Comms Generator Gem', 'ROI Tracker Form', 'Sasquatch Hub Setup', 'EV&E Feedback Loop'],
-        'Workstream': ['Readiness & Enablement', 'Readiness & Enablement', 'Technology & Design', 'Hub & Spoke', 'EV&E Integration'],
-        'Hours_Saved_Monthly': [120, 80, 45, 150, 60],
-        'Estimated_Dollar_Savings': [6000, 4000, 2250, 7500, 3000]
-    }
-    df = pd.DataFrame(data)
 
 # Apply Sidebar Workstream Filter
 if selected_workstream != "All Workstreams":
